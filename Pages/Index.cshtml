@@ -4,7 +4,232 @@
     ViewData["Title"] = "Hem";
 }
 
-<div class="text-center">
-    @* <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
+<!doctype html>
+<html>
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+	<title>Välfärdsstatistik</title>
+	<img width="35%" src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
+
+
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  @* background-color: DodgerBlue; *@
+}
+
+.flex-container > div {
+  @* background-color: #f1f1f1; *@
+  @* width: 100px;
+  margin: 10px; *@
+  text-align: center;
+  @* line-height: 75px; *@
+  @* font-size: 30px; *@
+}
+</style>
+</head>
+
+<body>
+
+	<div class="flex-container">
+  <div>		<label><b>Topp producent </b></label>
+		<form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
+		  <option value="saab">011 livsmedel</option>
+		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
+		  <option value="audi">0112 kött</option>
+		  <option value="audi">0114 mjölk, ost och ägg</option>
+		  <option value="audi">0115 oljor och fetter</option>
+		  <option value="audi">0116 frukt</option>
+		  <option value="audi">0117 grönsaker</option>
+		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
+		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
+		</select><br><br>
+
+	
+	  </form>
+	  
+	  </div>
+
+
+
+
+
+<canvas id="myChart"></canvas>
+  <div>
+	  <h1>Välfärdsstatistik</h1>
+	  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+  </div>  
+ 
 </div>
+
+@* <div style="display: flex; flex-direction: column; padding-top: 250px;" class="container">
+	<canvas id="myChart"></canvas>
+
+	<div>
+		<label><b>Topp producent </b></label>
+		<form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
+		  <option value="saab">011 livsmedel</option>
+		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
+		  <option value="audi">0112 kött</option>
+		  <option value="audi">0114 mjölk, ost och ägg</option>
+		  <option value="audi">0115 oljor och fetter</option>
+		  <option value="audi">0116 frukt</option>
+		  <option value="audi">0117 grönsaker</option>
+		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
+		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
+		</select><br><br>
+
+	
+	  </form>
+	  <label><b>Nivå 1 </b></label>
+	  <form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">Subventioner</option>
+		  <option value="saab">Räntor</option>
+		  <option value="fiat">Offentlig konsumption</option>
+		  <option value="audi">Övriga utgifter</option>
+		  <option value="audi">Transfereringar till hushåll</option>
+		</select><br><br>
+
+	
+	  </form>  <label><b>Nivå 2 </b></label>
+	  <form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">1.Föräldrarpenning</option>
+		  <option value="saab">3.Barnbidrag</option>
+		  <option value="fiat">4.Adoptionsbidrag</option>
+		  <option value="audi">Underhållsstöd</option>
+		  <option value="audi">Graviditetsbonus</option>
+		</select><br><br>
+
+	
+	  </form>
+	</div>
+
+</div> *@
+
+
+		<div style="display: flex; flex-direction: column; padding-top: 250px;">
+		<label><b>Topp producent </b></label>
+		<form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
+		  <option value="saab">011 livsmedel</option>
+		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
+		  <option value="audi">0112 kött</option>
+		  <option value="audi">0114 mjölk, ost och ägg</option>
+		  <option value="audi">0115 oljor och fetter</option>
+		  <option value="audi">0116 frukt</option>
+		  <option value="audi">0117 grönsaker</option>
+		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
+		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
+		</select><br><br>
+
+	
+	  </form>
+	  <label><b>Nivå 1 </b></label>
+	  <form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">Subventioner</option>
+		  <option value="saab">Räntor</option>
+		  <option value="fiat">Offentlig konsumption</option>
+		  <option value="audi">Övriga utgifter</option>
+		  <option value="audi">Transfereringar till hushåll</option>
+		</select><br><br>
+
+	
+	  </form>  <label><b>Nivå 2 </b></label>
+	  <form action="/action_page.php">
+		
+		<select id="cars" name="cars" size="4" multiple>
+		  <option value="volvo">1.Föräldrarpenning</option>
+		  <option value="saab">3.Barnbidrag</option>
+		  <option value="fiat">4.Adoptionsbidrag</option>
+		  <option value="audi">Underhållsstöd</option>
+		  <option value="audi">Graviditetsbonus</option>
+		</select><br><br>
+
+	
+	  </form>
+	</div>
+	<button id="randomizeData">Beräkna</button>	
+	<button id="addData">Lägg till</button>
+	<button id="addDataset">Add Dataset</button>
+	<button id="removeDataset">Remove Dataset</button>
+
+	<button id="removeData">Remove Data</button>
+	</div>
+</body>
+
+<script>
+
+		var randomScalingFactor = function() {
+			return Math.round(Math.random() * 100);
+		};
+
+
+	var ctx = document.getElementById('myChart').getContext('2d');
+// And for a doughnut chart
+var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+ 			data: {
+				datasets: [{
+					data: [
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+					],
+					backgroundColor: [
+						"red",
+						"orange",
+						"yellow",
+						"green",
+						"blue",
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+				'Primärvård',
+					'Socialförsäkringar',
+					'Kommun',
+					'Landsting',
+					'IT-Sektor'
+				]
+			},
+    options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Välfärdsstatistik'
+					},
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
+});
+
+
+</script>
+</html>
+
