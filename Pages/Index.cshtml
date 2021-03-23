@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Hem";
+	ViewData["Title"] = "Hem";
 }
 
 <!doctype html>
@@ -11,225 +11,217 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 	<title>Välfärdsstatistik</title>
-	<img width="35%" src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
+	<img width="35%"
+		src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
 
 
-<style>
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  @* background-color: DodgerBlue; *@
-}
+	<style>
+		.flex-container {
+			display: flex;
+			flex-wrap: nowrap;
 
-.flex-container > div {
-  @* background-color: #f1f1f1; *@
-  @* width: 100px;
-  margin: 10px; *@
-  text-align: center;
-  @* line-height: 75px; *@
-  @* font-size: 30px; *@
-}
-</style>
+		}
+
+		.flex-container>div {
+
+
+			text-align: left !important;
+
+		}
+	</style>
 </head>
 
 <body>
 
 	<div class="flex-container">
-  <div>		<label><b>Topp producent </b></label>
-		<form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
-		  <option value="saab">011 livsmedel</option>
-		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
-		  <option value="audi">0112 kött</option>
-		  <option value="audi">0114 mjölk, ost och ägg</option>
-		  <option value="audi">0115 oljor och fetter</option>
-		  <option value="audi">0116 frukt</option>
-		  <option value="audi">0117 grönsaker</option>
-		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
-		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
-		</select><br><br>
+		<div>
 
-	
-	  </form>
-	  
-	  </div>
+			<label><b>Topp producent </b></label>
+			<form action="/action_page.php">
+
+				<select id="topproducers" name="topproducers" size="4" multiple>
+					<option name="Regioner" value="373 742 000 00000">Regioner</option>
+					<option name="Kommuner" value="700 987 000 00000">Kommuner</option>
+					<option name="Näringsliv" value="7 267 000 00000">Näringsliv</option>
+					<option name="Offentliga" value="0">Offentliga Inkomster skatter och avgifter</option>
+					<option name="Rika" value="0">Rika människor</option>
+					<option name="Socialförsäkringar" value="0">Socialförsäkringar</option>
+					<option name="Statens" value="0">Statens utgifter</option>
+					<option name="Privata" value="0">Privata företag inom offentliga sektorn</option>
+					<option name="Privatekonomi" value="0">Privat ekonomi</option>
+					<option name="NäringslivBrancher" value="0">Näringsliv Brancher</option>
+				</select><br><br>
 
 
+			</form>
+			<label><b>Nivå 1 </b></label>
+			<form action="/action_page.php">
+
+				<select id="niva1" name="niva1" size="4" multiple>
+					<option value="58376000000" name="Regioner">Primärvård ( vårdcentraler)</option>
+					<option value="173909000000" name="Regioner">Specialiserad somatisk vård</option>
+					<option value="27278000000" name="Regioner">Specialiserad psykisk vård</option>
+					<option value="11014000000" name="Regioner">Tandvård</option>
+					<option value="30 237 000 00000" name="Regioner">Övrig hälso och sjukvård</option>
+					<option value="24675000000" name="Regioner">Läkemedel (öppen)</option>
+					<option value="10167000000" name="Regioner">Regionalutveckling</option>
+					<option value="2190000000" name="Regioner">Politisk verksamhet</option>
+					<option value="35896000000" name="Regioner">Trafik och infrastruktur</option>
+					<option value="102 966 000 00000" name="Kommuner">Förskoleverksamhet och skolbarnomsorg</option>
+					<option value="127504000000" name="Kommuner">Grundskola</option>
+					<option value="45526000000" name="Kommuner">Gymnasieskola</option>
+					<option value="28041000000" name="Kommuner">Övrig utbildning</option>
+					<option value="129085000000" name="Kommuner">Äldreomsorg</option>
+					<option value="78372000000" name="Kommuner">Funktionshindrade</option>
+					<option value="14709000000" name="Kommuner">Ekonomiskt bistånd</option>
+					<option value="34713000000" name="Kommuner">Individ och familjeomsorg</option>
+					<option value="25255000000" name="Kommuner">Affärsverksamhet</option>
+					<option value="32630000000" name="Kommuner">Kultur och fritid</option>
+					<option value="49213000000" name="Kommuner">Infrastruktur och skydd</option>
+					<option value="32973000000" name="Kommuner">Övrigt</option>
+					<option value="700987000000" name="Kommuner">Kommuner</option>
+					<option value="2000000000" name="Kommuner">Äldreomsorg</option>
+					<option value="1000000000" name="Kommuner">Hemtjänst</option>
+					<option value="0" name="Kommuner">Privata företag inom offentliga sektorn</option>
+					<option value="0" name="Kommuner">Privat offentlig verksamhet</option>
+					<option value="123879000000" name="Kommuner">Kommun, omsättning privata aktörer</option>
+					<option value="0" name="Kommuner">Kommun, omsättning privata äldreomsorg</option>
+					<option value="0" name="Kommuner">Kommun, omsättning privat hemtjänst</option>
+
+				</select><br><br>
+
+
+			</form>
+			<label><b>Nivå 2 </b></label>
+			<form action="/action_page.php">
+
+				<select id="niva2" name="niva2" size="4" multiple>
+					<option value="Region">Primärvård ( vårdcentraler)</option>
+					<option value="Region">Specialiserad somatisk vård</option>
+					<option value="Region">Specialiserad psykisk vård</option>
+					<option value="Region">Tandvård</option>
+					<option value="Region">Övrig hälso och sjukvård</option>
+					<option value="Region">Läkemedel (öppen)</option>
+					<option value="Region">Regionalutveckling</option>
+					<option value="Region">Politisk verksamhet</option>
+					<option value="Region">Trafik och infrastruktur</option>
+
+				</select><br><br>
+
+
+			</form>
+
+			<button id="randomizeData">Beräkna</button>
+			<button id="addData">Lägg till</button>
+			@* <button id="addDataset">Add Dataset</button>
+   	<button id="removeDataset">Remove Dataset</button>
+
+   	<button id="removeData">Remove Data</button> *@
+
+		</div>
 
 
 
-<canvas id="myChart"></canvas>
-  <div>
-	  <h1>Välfärdsstatistik</h1>
-	  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
-  </div>  
- 
-</div>
 
-@* <div style="display: flex; flex-direction: column; padding-top: 250px;" class="container">
-	<canvas id="myChart"></canvas>
 
-	<div>
-		<label><b>Topp producent </b></label>
-		<form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
-		  <option value="saab">011 livsmedel</option>
-		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
-		  <option value="audi">0112 kött</option>
-		  <option value="audi">0114 mjölk, ost och ägg</option>
-		  <option value="audi">0115 oljor och fetter</option>
-		  <option value="audi">0116 frukt</option>
-		  <option value="audi">0117 grönsaker</option>
-		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
-		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
-		</select><br><br>
+		<canvas id="myChart"></canvas>
+		<div>
+			<h1>Välfärdsstatistik</h1>
+			<p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
+				verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
+				Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
+				en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
+		</div>
 
-	
-	  </form>
-	  <label><b>Nivå 1 </b></label>
-	  <form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">Subventioner</option>
-		  <option value="saab">Räntor</option>
-		  <option value="fiat">Offentlig konsumption</option>
-		  <option value="audi">Övriga utgifter</option>
-		  <option value="audi">Transfereringar till hushåll</option>
-		</select><br><br>
-
-	
-	  </form>  <label><b>Nivå 2 </b></label>
-	  <form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">1.Föräldrarpenning</option>
-		  <option value="saab">3.Barnbidrag</option>
-		  <option value="fiat">4.Adoptionsbidrag</option>
-		  <option value="audi">Underhållsstöd</option>
-		  <option value="audi">Graviditetsbonus</option>
-		</select><br><br>
-
-	
-	  </form>
 	</div>
 
-</div> *@
 
-
-		<div style="display: flex; flex-direction: column; padding-top: 250px;">
-		<label><b>Topp producent </b></label>
-		<form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">01 livsmedel och alkoholfria drycker</option>
-		  <option value="saab">011 livsmedel</option>
-		  <option value="fiat">0111 bröd och spannmålsprodukter</option>
-		  <option value="audi">0112 kött</option>
-		  <option value="audi">0114 mjölk, ost och ägg</option>
-		  <option value="audi">0115 oljor och fetter</option>
-		  <option value="audi">0116 frukt</option>
-		  <option value="audi">0117 grönsaker</option>
-		  <option value="audi">0118 sötsaker, glass, sylt, marmelad och konfekt</option>
-		  <option value="audi">0119 salt, kryddor, såser o homogeniserad barnmat</option>
-		</select><br><br>
-
-	
-	  </form>
-	  <label><b>Nivå 1 </b></label>
-	  @* <form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">Subventioner</option>
-		  <option value="saab">Räntor</option>
-		  <option value="fiat">Offentlig konsumption</option>
-		  <option value="audi">Övriga utgifter</option>
-		  <option value="audi">Transfereringar till hushåll</option>
-		</select><br><br>
-
-	
-	  </form>  <label><b>Nivå 2 </b></label>
-	  <form action="/action_page.php">
-		
-		<select id="cars" name="cars" size="4" multiple>
-		  <option value="volvo">1.Föräldrarpenning</option>
-		  <option value="saab">3.Barnbidrag</option>
-		  <option value="fiat">4.Adoptionsbidrag</option>
-		  <option value="audi">Underhållsstöd</option>
-		  <option value="audi">Graviditetsbonus</option>
-		</select><br><br>
-
-	
-	  </form> *@
 	</div>
-	<button id="randomizeData">Beräkna</button>	
-	<button id="addData">Lägg till</button>
-	<button id="addDataset">Add Dataset</button>
-	<button id="removeDataset">Remove Dataset</button>
-
-	<button id="removeData">Remove Data</button>
 	</div>
 </body>
-
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
 
-		var randomScalingFactor = function() {
-			return Math.round(Math.random() * 100);
-		};
+	var label1 = '';
+	var label2 = '';
+	// Logic 
+	$(document).ready(function () {
+		var t = document.getElementById("topproducers");
+		var topProducers = t.options;
+	});
+
+	// Filter based on selected value in Topproducers
+	$('#topproducers, #niva1' ).on('change', function () {
+		console.log("test")
+
+myDoughnutChart.data.labels = [];
+
+//Name
+	    myDoughnutChart.data.labels.push($('#niva1').find(":selected").text())
+		var niva1Value = parseInt($('#niva1').find(":selected").attr('value'));
+myDoughnutChart.data.datasets[0].data.push(niva1Value)
+
+
+		myDoughnutChart.data.labels.push($('#topproducers').find(":selected").text())
+       var Topvalue = $('#topproducers').find(":selected").attr('value')
+@* myDoughnutChart.data.datasets[0].data.push(Topvalue) *@
+
+
+		myDoughnutChart.update()
+	});
+
+
+
+	//
+	var randomScalingFactor = function () {
+		return Math.round(Math.random() * 100);
+	};
+
 
 
 	var ctx = document.getElementById('myChart').getContext('2d');
-// And for a doughnut chart
-var myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
- 			data: {
-				datasets: [{
-					data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-					],
-					backgroundColor: [
-						"red",
-						"orange",
-						"yellow",
-						"green",
-						"blue",
-					],
-					label: 'Dataset 1'
-				}],
-				labels: [
-				'Primärvård',
-					'Socialförsäkringar',
-					'Kommun',
-					'Landsting',
-					'IT-Sektor'
-				]
-			},
-    options: {
-				responsive: true,
-				plugins: {
-					legend: {
-						position: 'top',
-					},
-					title: {
-						display: true,
-						text: 'Välfärdsstatistik'
-					},
+	// And for a doughnut chart
+	var myDoughnutChart = new Chart(ctx, {
+		type: 'doughnut',
+		data: {
+			datasets: [{
+				data: [
+				
+
+				],
+				backgroundColor: [
+					"red",
+					"orange",
+					"yellow",
+					"green",
+					"blue",
+				],
+				label: 'Dataset 1'
+			}],
+			labels: [
+				
+
+			]
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					position: 'top',
 				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
+				title: {
+					display: true,
+					text: 'Välfärdsstatistik'
+				},
+			},
+			animation: {
+				animateScale: true,
+				animateRotate: true
 			}
-});
+		}
+	});
 
 
 </script>
-</html>
 
+</html>
