@@ -31,8 +31,7 @@
 
     <div class="flex-container">
         <div>
-
-            <label><b>Topp producent </b></label>
+           
            <div class="form-group">
     <label for="exampleFormControlSelect1">Topp producent</label>
     <select class="form-control" id="exampleFormControlSelect1">
@@ -42,12 +41,27 @@
       <option>4</option>
       <option>5</option>
     </select>
-  </div>
-           
-            <button type="button" class="btn btn-light">Lägg till</button>
-           
-        
 
+        <label for="exampleFormControlSelect1">Nivå 1</label>
+    <select class="form-control" id="Niva1Form">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+        <label for="exampleFormControlSelect1">Nivå 2</label>
+    <select class="form-control" id="Niva2Form">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+     <button type="button" class="btn btn-light">Lägg till</button>   
+  </div>  
+         
         </div>
 
          <canvas id="pieChart"></canvas>
@@ -70,7 +84,7 @@
     <script src="~/vendor/chart.js/Chart.js"></script>
     <script type="text/javascript">
         @Html.Raw(pieChart.CreateChartCode("pieChart"));
-        console.log("test",pieChart);
+        
     </script>
   
 
