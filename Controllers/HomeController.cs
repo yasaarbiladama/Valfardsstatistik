@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Valfardsstatistik.Models;
 using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
+using Dapper;
 
 namespace Valfardsstatistik.Controllers
 {
@@ -23,6 +25,8 @@ namespace Valfardsstatistik.Controllers
 
         public IActionResult Index()
         {
+
+            GetSqlData();
 
             Chart pieChart = GeneratePieChart();
             ViewData["PieChart"] = pieChart;
@@ -51,11 +55,11 @@ namespace Valfardsstatistik.Controllers
                     ChartColor.FromHexString("#36A2EB"),
                     ChartColor.FromHexString("#FFCE56")
                 },
-                 Data = new List<double?>() { 300, 50, 100 }
-                
+                Data = new List<double?>() { 300, 50, 100 }
+
             };
 
-            
+
 
             data.Datasets = new List<Dataset>();
             data.Datasets.Add(dataset);
@@ -63,6 +67,18 @@ namespace Valfardsstatistik.Controllers
             chart.Data = data;
 
             return chart;
+        }
+
+        public void GetSqlData()
+        {
+            var mssqlConnectionString = "Server=tcp:valfardsstatistik.database.windows.net,1433;Initial Catalog=valfardsstatistikdb;Persist Security Info=False;User ID=minnadb;Password=Beachsteps@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            using var connection = new SqlConnection(mssqlConnectionString);
+            // Dapper will open for us
+            //connection.Open();
+            var data = connection.Query<string>("SELECT * FROM Huvudtabellen").ToList();
+
+            // return data;
+
         }
 
         public IActionResult Privacy()
