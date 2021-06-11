@@ -1,0 +1,76 @@
+﻿@using ChartJSCore.Models;
+
+@{
+    ViewData["Title"] = "Index";
+
+  
+    Chart pieChart = (Chart)ViewData["PieChart"];
+
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <title>Välfärdsstatistik</title>
+    <img width="35%"
+        src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
+
+
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .flex-container>div {
+            text-align: left !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <div>
+
+            <label><b>Topp producent </b></label>
+           <div class="form-group">
+    <label for="exampleFormControlSelect1">Topp producent</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+           
+            <button type="button" class="btn btn-light">Lägg till</button>
+           
+        
+
+        </div>
+
+         <canvas id="pieChart"></canvas>
+        <div>
+            <h1>Välfärdsstatistik</h1>
+            <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
+                verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
+                Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
+                en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
+        </div>
+
+    </div>
+
+
+    </div>
+    </div>
+</body>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="~/vendor/chart.js/Chart.js"></script>
+    <script type="text/javascript">
+        @Html.Raw(pieChart.CreateChartCode("pieChart"));
+        console.log("test",pieChart);
+    </script>
+  
+
