@@ -75,7 +75,12 @@ namespace Valfardsstatistik.Controllers
             using var connection = new SqlConnection(mssqlConnectionString);
             // Dapper will open for us
             //connection.Open();
-            var data = connection.Query<string>("SELECT * FROM Huvudtabellen").ToList();
+            var ToppProducenter = connection.Query<ToppProducent>("SELECT * FROM Huvudtabellen where Topp = 1").ToList();
+            var Nivå1 = connection.Query<Nivå1>("SELECT * FROM Huvudtabellen where Nivå_1 = 1").ToList();
+            var Nivå2 = connection.Query<Nivå2>("SELECT * FROM Huvudtabellen where Nivå_2 = 1").ToList();
+
+            // var dog = connection.Query<MainTable>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
+
 
             // return data;
 
