@@ -25,17 +25,21 @@ namespace Valfardsstatistik.Controllers
 
         public IActionResult Index()
         {
-
-            GetSqlData();
-
             Chart pieChart = GeneratePieChart();
             ViewData["PieChart"] = pieChart;
 
-            return View();
+            var MainTable = GetSqlData();
+            ViewData["MainTable"] = MainTable;
+
+            return View(MainTable);
         }
 
         private Chart GeneratePieChart()
         {
+            // data
+
+            var MainTable = GetSqlData();
+
             Chart chart = new Chart();
             chart.Type = Enums.ChartType.Pie;
 
@@ -55,11 +59,11 @@ namespace Valfardsstatistik.Controllers
                     ChartColor.FromHexString("#36A2EB"),
                     ChartColor.FromHexString("#FFCE56")
                 },
-                Data = new List<double?>() { 300, 50, 100 }
+
+                // Data = new List<double?>() { 300, 50, 100 }
+                Data = MainTable.ToppProducent.Select(x => (double?)double.Parse(x.Belopp)).ToList(), //Here i want this to be filled with data from AppropriateLine variable, it works for the fixed value only
 
             };
-
-
 
             data.Datasets = new List<Dataset>();
             data.Datasets.Add(dataset);
@@ -69,22 +73,25 @@ namespace Valfardsstatistik.Controllers
             return chart;
         }
 
-        public void GetSqlData()
+        public MainTable GetSqlData()
         {
+
             var mssqlConnectionString = "Server=tcp:valfardsstatistik.database.windows.net,1433;Initial Catalog=valfardsstatistikdb;Persist Security Info=False;User ID=minnadb;Password=Beachsteps@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             using var connection = new SqlConnection(mssqlConnectionString);
-            // Dapper will open for us
-            //connection.Open();
+
             var ToppProducenter = connection.Query<ToppProducent>("SELECT * FROM Huvudtabellen where Topp = 1").ToList();
             var Nivå1 = connection.Query<Nivå1>("SELECT * FROM Huvudtabellen where Nivå_1 = 1").ToList();
             var Nivå2 = connection.Query<Nivå2>("SELECT * FROM Huvudtabellen where Nivå_2 = 1").ToList();
 
             // var dog = connection.Query<MainTable>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
 
+            var MainTable = new MainTable { ToppProducent = ToppProducenter, Nivå1 = Nivå1, Nivå2 = Nivå2 };
 
-            // return data;
+
+            return MainTable;
 
         }
+
 
         public IActionResult Privacy()
         {

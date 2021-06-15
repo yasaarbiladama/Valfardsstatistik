@@ -1,90 +1,199 @@
-﻿@using ChartJSCore.Models;
+﻿@{
+  ViewData["Title"] = "Index";
 
-@{
-    ViewData["Title"] = "Index";
+  MainTable mainTable = (MainTable)ViewData["MainTable"];
 
-  
-    Chart pieChart = (Chart)ViewData["PieChart"];
 
 }
 
+<!doctype html>
+<html>
+
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-    <title>Välfärdsstatistik</title>
-    <img width="35%"
-        src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
+  <title>Välfärdsstatistik</title>
+  <img width="35%"
+    src="https://valfardstatistik.files.wordpress.com/2020/06/cropped-loggavacc88lfacc88rdstatistik.png?w=750&h=334"><img>
 
 
-    <style>
-        .flex-container {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-        .flex-container>div {
-            text-align: left !important;
-        }
-    </style>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+
+    }
+
+    .flex-container>div {
+
+
+      text-align: left !important;
+
+    }
+
+    .form-control {
+      width: 280px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="flex-container">
-        <div>
-           
-           <div class="form-group">
-    <label for="exampleFormControlSelect1">Topp producent</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+  <div class="flex-container">
+    <div>
+
+      <label><b>Topp producent </b></label>
+      <div class="form-group">
+
+        <label for="TopProducer">Topp producent</label>
+        <select class="form-control" id="TopProducerSelectList">
+
+
+          @foreach (var item in mainTable.ToppProducent)
+          {
+            <tr>
+              <option value="@item.Belopp" id="TopProducerOptionId">@item.Namn</option>
+            </tr>
+          }
+
+        </select>
 
         <label for="exampleFormControlSelect1">Nivå 1</label>
-    <select class="form-control" id="Niva1Form">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+        <select class="form-control" id="Nivå1SelectList">
+          @foreach (var item in mainTable.Nivå1)
+          {
+            <tr>
+              <option value="@item.Belopp" id="Nivå1OptionId" class="@item.Nivå_1">@item.Namn</option>
+            </tr>
+          }
+        </select>
 
         <label for="exampleFormControlSelect1">Nivå 2</label>
-    <select class="form-control" id="Niva2Form">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-     <button type="button" class="btn btn-light">Lägg till</button>   
-  </div>  
-         
-        </div>
-
-         <canvas id="pieChart"></canvas>
-        <div>
-            <h1>Välfärdsstatistik</h1>
-            <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
-                verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
-                Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
-                en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
-        </div>
-
+        <select class="form-control" id="Nivå2SelectList">
+          @foreach (var item in mainTable.Nivå2)
+          {
+            <tr>
+              <option value="@item.Belopp" id="Nivå2OptionId" class="@item.Nivå_2">@item.Namn</option>
+            </tr>
+          }
+        </select>
+        @* <button type="button" class="btn btn-light">Lägg till</button>
+        <button type="button" class="btn btn-light">Beräkna</button> *@
+      </div>
     </div>
 
 
+
+
+
+    <canvas id="myChart"></canvas>
+    <div>
+      <h1>Välfärdsstatistik</h1>
+      <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
+        verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
+        Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
+        en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
     </div>
-    </div>
+
+  </div>
+
+
+  </div>
+  </div>
 </body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="~/vendor/chart.js/Chart.js"></script>
-    <script type="text/javascript">
-        @Html.Raw(pieChart.CreateChartCode("pieChart"));
-        
-    </script>
-  
+  var doughnutLabelNameArray = '';
+  var doughnutValueArray = '';
 
+  // Logic 
+
+
+  alert("start")
+
+  // Start Initiate loaded Chart
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  // And for a doughnut chart
+  var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [1],
+        backgroundColor: [
+          "red",
+          "orange",
+          "yellow",
+          "green",
+          "blue",
+        ],
+        label: 'Dataset 1'
+      }],
+      labels: ['Välfärdsstatistik'
+
+
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Välfärdsstatistik'
+        },
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      }
+    }
+  });
+
+
+  // Filter based on selected value in Topproducers
+
+  document.getElementById("TopProducerSelectList").addEventListener("change", selectedValueChange);
+  document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChange);
+  document.getElementById("Nivå2SelectList").addEventListener("change", selectedValueChange);
+
+
+  function selectedValueChange() {
+    alert("Change")
+
+    myDoughnutChart.data.labels = [];
+    myDoughnutChart.data.datasets[0].data = [];
+
+    if ($('#TopProducerSelectList').find(":selected").text() != null) {
+
+      myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
+    myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value')))  
+
+
+
+    }
+    if ($('#Nivå1SelectList').find(":selected").text() != null) {
+
+      myDoughnutChart.data.labels.push($('#Nivå1SelectList').find(":selected").text())
+        myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå1SelectList').find(":selected").attr('value')))  
+    }
+    if ($('#Nivå2SelectList').find(":selected").text() != null) {
+
+      myDoughnutChart.data.labels.push($('#Nivå2SelectList').find(":selected").text())
+        myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))  
+    }
+
+
+    myDoughnutChart.update()
+  }
+
+
+
+
+
+</script>
+
+</html>
