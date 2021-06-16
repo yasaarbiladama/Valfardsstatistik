@@ -77,8 +77,8 @@
             </tr>
           }
         </select>
-        @* <button type="button" class="btn btn-light">Lägg till</button>
-        <button type="button" class="btn btn-light">Beräkna</button> *@
+        <button type="button" id="AddBtn" class="btn btn-light">Lägg till</button>
+        <button type="button" id="ClearBtn" class="btn btn-light">Rensa</button>
       </div>
     </div>
 
@@ -110,7 +110,6 @@
   // Logic 
 
 
-  alert("start")
 
   // Start Initiate loaded Chart
 
@@ -160,19 +159,29 @@
   document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChange);
   document.getElementById("Nivå2SelectList").addEventListener("change", selectedValueChange);
 
+  document.getElementById("AddBtn").addEventListener("click", AddValue);
+  document.getElementById("ClearBtn").addEventListener("click", ClearValue);
 
+// On Change
   function selectedValueChange() {
-    alert("Change")
+    alert("Todo: Logik för när värden ändras")
+
+
+    myDoughnutChart.update()
+  }
+  
+// On Add
+
+ function AddValue() {
+    alert("Lägger till värden")
 
     myDoughnutChart.data.labels = [];
     myDoughnutChart.data.datasets[0].data = [];
 
     if ($('#TopProducerSelectList').find(":selected").text() != null) {
 
-      myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
+    myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
     myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value')))  
-
-
 
     }
     if ($('#Nivå1SelectList').find(":selected").text() != null) {
@@ -186,9 +195,22 @@
         myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))  
     }
 
+    myDoughnutChart.update()
+  }
+  
+// On Clear
+
+ function ClearValue() {
+    alert("Rensar värden")
+
+    myDoughnutChart.data.labels = ["Välfärdsstatistik"];
+    myDoughnutChart.data.datasets[0].data = [1];
 
     myDoughnutChart.update()
   }
+  
+
+
 
 
 
