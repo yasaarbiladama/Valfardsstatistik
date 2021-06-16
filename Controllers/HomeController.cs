@@ -25,8 +25,8 @@ namespace Valfardsstatistik.Controllers
 
         public IActionResult Index()
         {
-            Chart pieChart = GeneratePieChart();
-            ViewData["PieChart"] = pieChart;
+            // Chart pieChart = GeneratePieChart();
+            // ViewData["PieChart"] = pieChart;
 
             var MainTable = GetSqlData();
             ViewData["MainTable"] = MainTable;

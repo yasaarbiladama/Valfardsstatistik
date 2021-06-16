@@ -42,10 +42,10 @@
   <div class="flex-container">
     <div>
 
-      <label><b>Topp producent </b></label>
+  
       <div class="form-group">
 
-        <label for="TopProducer">Topp producent</label>
+        <label for="TopProducer"><b> Topp producent</b></label>
         <select class="form-control" id="TopProducerSelectList">
 
 
@@ -58,7 +58,7 @@
 
         </select>
 
-        <label for="exampleFormControlSelect1">Nivå 1</label>
+        <label for="exampleFormControlSelect1"><b> Nivå 1</b></label>
         <select class="form-control" id="Nivå1SelectList">
           @foreach (var item in mainTable.Nivå1)
           {
@@ -68,7 +68,7 @@
           }
         </select>
 
-        <label for="exampleFormControlSelect1">Nivå 2</label>
+        <label for="exampleFormControlSelect1"><b> Nivå 2</b></label>
         <select class="form-control" id="Nivå2SelectList">
           @foreach (var item in mainTable.Nivå2)
           {
@@ -88,6 +88,11 @@
 
     <canvas id="myChart"></canvas>
     <div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon" style="background-image: url('wwwroot/media/HamburgerMenuIcon.png');"></span>
+                </button>
       <h1>Välfärdsstatistik</h1>
       <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
         verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
@@ -164,7 +169,7 @@
 
 // On Change
   function selectedValueChange() {
-    alert("Todo: Logik för när värden ändras")
+    alert("Att fixa: Logik för när värden ändras i nivå 1 & 2")
 
 
     myDoughnutChart.update()
@@ -209,9 +214,6 @@
     myDoughnutChart.update()
   }
   
-
-
-
 
 
 
