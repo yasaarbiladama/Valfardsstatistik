@@ -42,13 +42,13 @@
   <div class="flex-container">
     <div>
 
-  
+
       <div class="form-group">
 
-        <label for="TopProducer"><b> Topp producent</b></label>
+        @* <label for="TopProducer"><b> Topp producent</b></label> *@
         <select class="form-control" id="TopProducerSelectList">
 
-
+          <option disabled selected value=""> -- select an option -- </option>
           @foreach (var item in mainTable.ToppProducent)
           {
             <tr>
@@ -57,9 +57,11 @@
           }
 
         </select>
+        <button type="button" id="AddBtnTopp" class="btn btn-success">Lägg till Topp producent</button>
 
-        <label for="exampleFormControlSelect1"><b> Nivå 1</b></label>
+        @* <label for="exampleFormControlSelect1"><b> Nivå 1</b></label> *@
         <select class="form-control" id="Nivå1SelectList">
+          <option disabled selected value=""> -- select an option -- </option>
           @foreach (var item in mainTable.Nivå1)
           {
             <tr>
@@ -67,9 +69,10 @@
             </tr>
           }
         </select>
-
-        <label for="exampleFormControlSelect1"><b> Nivå 2</b></label>
+        <button type="button" id="AddBtnNivå1" class="btn btn-success">Lägg till Nivå 1</button>
+        @* <label for="exampleFormControlSelect1"><b> Nivå 2</b></label> *@
         <select class="form-control" id="Nivå2SelectList">
+          <option disabled selected value=""> -- select an option -- </option>
           @foreach (var item in mainTable.Nivå2)
           {
             <tr>
@@ -77,8 +80,9 @@
             </tr>
           }
         </select>
-        <button type="button" id="AddBtn" class="btn btn-light">Lägg till</button>
-        <button type="button" id="ClearBtn" class="btn btn-light">Rensa</button>
+        <button type="button" id="AddBtnNivå2" class="btn btn-success">Lägg till nivå 2</button>
+        <button type="button" id="ClearBtn" class="btn btn-warning">Rensa</button>
+        
       </div>
     </div>
 
@@ -89,10 +93,11 @@
     <canvas id="myChart"></canvas>
     <div>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-                    <span class="navbar-toggler-icon" style="background-image: url('wwwroot/media/HamburgerMenuIcon.png');"></span>
-                </button>
+        <span class="navbar-toggler-icon" style="background-image: url('wwwroot/media/HamburgerMenuIcon.png');"></span>
+      </button>
       <h1>Välfärdsstatistik</h1>
       <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
         verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
@@ -131,6 +136,137 @@
           "yellow",
           "green",
           "blue",
+            "CornflowerBlue",
+  "Cornsilk",
+  "Crimson",
+  "Cyan",
+  "DarkBlue",
+  "DarkCyan",
+  "DarkGoldenRod",
+  "DarkGray",
+  "DarkGrey",
+  "DarkGreen",
+  "DarkKhaki",
+  "DarkMagenta",
+  "DarkOliveGreen",
+  "DarkOrange",
+  "DarkOrchid",
+  "DarkRed",
+  "DarkSalmon",
+  "DarkSeaGreen",
+  "DarkSlateBlue",
+  "DarkSlateGray",
+  "DarkSlateGrey",
+  "DarkTurquoise",
+  "DarkViolet",
+  "DeepPink",
+  "DeepSkyBlue",
+  "DimGray",
+  "DimGrey",
+  "DodgerBlue",
+  "FireBrick",
+  "FloralWhite",
+  "ForestGreen",
+  "Fuchsia",
+  "Gainsboro",
+  "GhostWhite",
+  "Gold",
+  "GoldenRod",
+  "Gray",
+  "Grey",
+  "Green",
+  "GreenYellow",
+  "HoneyDew",
+  "HotPink",
+  "IndianRed",
+  "Indigo",
+  "Ivory",
+  "Khaki",
+  "Lavender",
+  "LavenderBlush",
+  "LawnGreen",
+  "LemonChiffon",
+  "LightBlue",
+  "LightCoral",
+  "LightCyan",
+  "LightGoldenRodYellow",
+  "LightGray",
+  "LightGrey",
+  "LightGreen",
+  "LightPink",
+  "LightSalmon",
+  "LightSeaGreen",
+  "LightSkyBlue",
+  "LightSlateGray",
+  "LightSlateGrey",
+  "LightSteelBlue",
+  "LightYellow",
+  "Lime",
+  "LimeGreen",
+  "Linen",
+  "Magenta",
+  "Maroon",
+  "MediumAquaMarine",
+  "MediumBlue",
+  "MediumOrchid",
+  "MediumPurple",
+  "MediumSeaGreen",
+  "MediumSlateBlue",
+  "MediumSpringGreen",
+  "MediumTurquoise",
+  "MediumVioletRed",
+  "MidnightBlue",
+  "MintCream",
+  "MistyRose",
+  "Moccasin",
+  "NavajoWhite",
+  "Navy",
+  "OldLace",
+  "Olive",
+  "OliveDrab",
+  "Orange",
+  "OrangeRed",
+  "Orchid",
+  "PaleGoldenRod",
+  "PaleGreen",
+  "PaleTurquoise",
+  "PaleVioletRed",
+  "PapayaWhip",
+  "PeachPuff",
+  "Peru",
+  "Pink",
+  "Plum",
+  "PowderBlue",
+  "Purple",
+  "RebeccaPurple",
+  "Red",
+  "RosyBrown",
+  "RoyalBlue",
+  "SaddleBrown",
+  "Salmon",
+  "SandyBrown",
+  "SeaGreen",
+  "SeaShell",
+  "Sienna",
+  "Silver",
+  "SkyBlue",
+  "SlateBlue",
+  "SlateGray",
+  "SlateGrey",
+  "Snow",
+  "SpringGreen",
+  "SteelBlue",
+  "Tan",
+  "Teal",
+  "Thistle",
+  "Tomato",
+  "Turquoise",
+  "Violet",
+  "Wheat",
+  "White",
+  "WhiteSmoke",
+  "Yellow",
+  "YellowGreen"
         ],
         label: 'Dataset 1'
       }],
@@ -164,56 +300,70 @@
   document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChange);
   document.getElementById("Nivå2SelectList").addEventListener("change", selectedValueChange);
 
-  document.getElementById("AddBtn").addEventListener("click", AddValue);
+  document.getElementById("AddBtnTopp").addEventListener("click", AddValueTopp);
+  document.getElementById("AddBtnNivå1").addEventListener("click", AddValueNivå1);
+  document.getElementById("AddBtnNivå2").addEventListener("click", AddValueNivå2);
   document.getElementById("ClearBtn").addEventListener("click", ClearValue);
 
-// On Change
+  // On Change
   function selectedValueChange() {
-    alert("Att fixa: Logik för när värden ändras i nivå 1 & 2")
+    @* alert("Att fixa: Logik för när värden ändras i nivå 1 & 2") *@
 
 
     myDoughnutChart.update()
   }
+
+  // On Add
+
+  function AddValueTopp() {
+
+    if ($('#TopProducerSelectList').find(":selected").attr('value') !== "") {
+
+      myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
+      myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value')))
+
+    }   
+
+    myDoughnutChart.update()
+  }
+
+  function AddValueNivå1() {
   
-// On Add
-
- function AddValue() {
-    alert("Lägger till värden")
-
-    myDoughnutChart.data.labels = [];
-    myDoughnutChart.data.datasets[0].data = [];
-
-    if ($('#TopProducerSelectList').find(":selected").text() != null) {
-
-    myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
-    myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value')))  
-
-    }
-    if ($('#Nivå1SelectList').find(":selected").text() != null) {
+    if ($('#Nivå1SelectList').find(":selected").attr('value') !== "") {
 
       myDoughnutChart.data.labels.push($('#Nivå1SelectList').find(":selected").text())
-        myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå1SelectList').find(":selected").attr('value')))  
+      myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå1SelectList').find(":selected").attr('value')))
     }
-    if ($('#Nivå2SelectList').find(":selected").text() != null) {
+    
+    myDoughnutChart.update()
+  }
+
+  function AddValueNivå2() {  
+
+     if ($('#Nivå2SelectList').find(":selected").attr('value') !== "") {
 
       myDoughnutChart.data.labels.push($('#Nivå2SelectList').find(":selected").text())
-        myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))  
+      myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))
+    
+
     }
 
     myDoughnutChart.update()
   }
-  
-// On Clear
 
- function ClearValue() {
-    alert("Rensar värden")
 
-    myDoughnutChart.data.labels = ["Välfärdsstatistik"];
-    myDoughnutChart.data.datasets[0].data = [1];
+
+  // On Clear
+
+  function ClearValue() {
+  @* alert("Rensar värden") *@
+
+      myDoughnutChart.data.labels =["Välfärdsstatistik"];
+    myDoughnutChart.data.datasets[0].data = [0];
 
     myDoughnutChart.update()
   }
-  
+
 
 
 
