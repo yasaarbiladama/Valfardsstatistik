@@ -15649,8 +15649,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/BestallaTjanster.cshtml",
+      "TargetPath": "Views\\Home\\BestallaTjanster.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/Definitioner.cshtml",
+      "TargetPath": "Views\\Home\\Definitioner.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/OmOss.cshtml",
+      "TargetPath": "Views\\Home\\OmOss.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/Kalla.cshtml",
+      "TargetPath": "Views\\Home\\Kalla.cshtml",
       "FileKind": "mvc"
     }
   ],

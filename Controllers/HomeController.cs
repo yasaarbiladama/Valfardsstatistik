@@ -93,7 +93,19 @@ namespace Valfardsstatistik.Controllers
         }
 
 
-        public IActionResult Privacy()
+        public IActionResult OmOss()
+        {
+            return View();
+        }
+        public IActionResult Kalla()
+        {
+            return View();
+        }
+        public IActionResult Definitioner()
+        {
+            return View();
+        }
+        public IActionResult BestallaTjanster()
         {
             return View();
         }
