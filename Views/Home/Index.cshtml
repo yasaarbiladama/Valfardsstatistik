@@ -34,6 +34,130 @@
     .form-control {
       width: 280px;
     }
+
+     /*----- Toggle Button -----*/
+      .toggle-nav {
+        display:none;
+      }
+
+      /*----- Menu -----*/
+    
+        .menu {
+          width:100%;
+          padding:10px 18px;
+          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+          border-radius:3px;
+          @* background:#303030; *@
+        }
+      
+
+      .menu ul {
+        display:inline-block;
+      }
+
+      .menu li {
+        margin:0px 50px 0px 0px;
+        float:left;
+        list-style:none;
+        font-size:17px;
+      }
+
+      .menu li:last-child {
+        margin-right:0px;
+      }
+
+      .menu a {
+        text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+        color:#777;
+        transition:color linear 0.15s;
+      }
+
+      .menu a:hover, .menu .current-item a {
+        text-decoration:none;
+        color:#66a992;
+      }
+      /*----- Responsive -----*/
+      .wrap {
+          width:90%;
+        }
+      
+
+    .search-form input {
+          width:120px;
+        }
+      
+
+       .menu {
+          position:relative;
+          display:inline-block;
+        }
+
+        .menu ul.active {
+          display:none;
+        }
+
+        .menu ul {
+          width:100%;
+          position:absolute;
+          top:120%;
+          left:0px;
+          padding:10px 18px;
+          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+          border-radius:3px;
+          background:#303030; 
+        }
+
+        .menu ul:after {
+          width:0px;
+          height:0px;
+          position:absolute;
+          top:0%;
+          left:22px;
+          content:'';
+          transform:translate(0%, -100%);
+          border-left:7px solid transparent;
+          border-right:7px solid transparent;
+          border-bottom:7px solid #303030;
+        }
+
+        .menu li {
+          margin:5px 0px 5px 0px;
+          float:none;
+          display:block;
+        }
+
+        .menu a {
+          display:block;
+        }
+
+        .toggle-nav {
+          padding:20px;
+          float:left;
+          display:inline-block;
+          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
+          border-radius:3px;
+          background:#303030;
+          text-shadow:0px 1px 0px rgba(0,0,0,0.5);
+          color:#777;
+          font-size:20px;
+          transition:color linear 0.15s;
+        }
+
+        .toggle-nav:hover, .toggle-nav.active {
+          text-decoration:none;
+          color:#66a992;
+        }
+
+        .search-form {
+          margin:12px 0px 0px 20px;
+          float:left;
+        }
+
+        .search-form input {
+          box-shadow:-1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+}
   </style>
 </head>
 
@@ -93,13 +217,20 @@
     <canvas id="myChart"></canvas>
     <div>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <nav class="menu">
+      <ul class="active">
+        <li class="current-item"><a href="#">Om oss</a></li>
+        <li><a href="#">Källor</a></li>
+        <li><a href="#">Definitioner Me</a></li>
+        <li><a href="#">Begränsningar
+Definitioner begrepp</a></li>
+        <li><a href="#">Beställ tjänster</a></li>
+      </ul>
 
-        <span class="navbar-toggler-icon" style="background-image: url('wwwroot/media/HamburgerMenuIcon.png');"></span>
-      </button>
+      <a class="toggle-nav" href="#">&#9776;</a>
+    </nav>
       <h1>Välfärdsstatistik</h1>
-      <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
+      <p contenteditable="true">Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
         verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
         Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
         en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
@@ -131,11 +262,13 @@
       datasets: [{
         data: [1],
         backgroundColor: [
+          "yellow",
+          "blue",
           "red",
           "orange",
-          "yellow",
+      
           "green",
-          "blue",
+       
           "CornflowerBlue",
           "Cornsilk",
           "Crimson",
@@ -365,7 +498,14 @@
   }
 
 
+jQuery(document).ready(function() {
+        jQuery('.toggle-nav').click(function(e) {
+          jQuery(this).toggleClass('active');
+          jQuery('.menu ul').toggleClass('active');
 
+          e.preventDefault();
+        });
+      });
 
 
 </script>
