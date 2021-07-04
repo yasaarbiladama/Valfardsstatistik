@@ -83,7 +83,7 @@ namespace Valfardsstatistik.Controllers
             var Nivå1 = connection.Query<Nivå1>("SELECT * FROM Huvudtabellen where Nivå_1 = 1").ToList();
             var Nivå2 = connection.Query<Nivå2>("SELECT * FROM Huvudtabellen where Nivå_2 = 1").ToList();
 
-            // var dog = connection.Query<MainTable>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
+        
 
             var MainTable = new MainTable { ToppProducent = ToppProducenter, Nivå1 = Nivå1, Nivå2 = Nivå2 };
 
