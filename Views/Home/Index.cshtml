@@ -13,19 +13,18 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
   <title>Välfärdsstatistik</title>
-  <img width="200px; height" height="200px"
-    src="https://i.postimg.cc/HkK5PhTG/logooffekonomi.png"><img>
+  <img width="200px; height" height="200px" src="https://i.postimg.cc/HkK5PhTG/logooffekonomi.png"><img>
 
 
   <style>
-
-
-    .myChart{
+    .myChart {
       margin: 0;
     }
-    .container{
-      margin:0;
+
+    .container {
+      margin: 0;
     }
+
     .flex-container {
       display: flex;
       flex-wrap: nowrap;
@@ -43,129 +42,132 @@
       width: 280px;
     }
 
-     /*----- Toggle Button -----*/
-      .toggle-nav {
-        display:none;
-      }
+    /*----- Toggle Button -----*/
+    .toggle-nav {
+      display: none;
+    }
 
-      /*----- Menu -----*/
-    
-        .menu {
-          width:100%;
-          padding:10px 18px;
-          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-          border-radius:3px;
-          @* background:#303030; *@
-        }
-      
+    /*----- Menu -----*/
 
-      .menu ul {
-        display:inline-block;
-      }
+    .menu {
+      width: 100%;
+      padding: 10px 18px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+      border-radius: 3px;
+      @*background:#303030;*@
+    }
 
-      .menu li {
-        margin:0px 50px 0px 0px;
-        float:left;
-        list-style:none;
-        font-size:17px;
-      }
 
-      .menu li:last-child {
-        margin-right:0px;
-      }
+    .menu ul {
+      display: inline-block;
+    }
 
-      .menu a {
-        text-shadow:0px 1px 0px rgba(0,0,0,0.5);
-        color:#777;
-        transition:color linear 0.15s;
-      }
+    .menu li {
+      margin: 0px 50px 0px 0px;
+      float: left;
+      list-style: none;
+      font-size: 17px;
+    }
 
-      .menu a:hover, .menu .current-item a {
-        text-decoration:none;
-        color:#66a992;
-      }
-      /*----- Responsive -----*/
-      .wrap {
-          width:90%;
-        }
-      
+    .menu li:last-child {
+      margin-right: 0px;
+    }
+
+    .menu a {
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+      color: #777;
+      transition: color linear 0.15s;
+    }
+
+    .menu a:hover,
+    .menu .current-item a {
+      text-decoration: none;
+      color: #66a992;
+    }
+
+    /*----- Responsive -----*/
+    .wrap {
+      width: 90%;
+    }
+
 
     .search-form input {
-          width:120px;
-        }
-      
+      width: 120px;
+    }
 
-       .menu {
-          position:relative;
-          display:inline-block;
-        }
 
-        .menu ul.active {
-          display:none;
-        }
+    .menu {
+      position: relative;
+      display: inline-block;
+    }
 
-        .menu ul {
-          width:100%;
-          position:absolute;
-          top:120%;
-          left:0px;
-          padding:10px 18px;
-          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-          border-radius:3px;
-          background:#303030; 
-        }
+    .menu ul.active {
+      display: none;
+    }
 
-        .menu ul:after {
-          width:0px;
-          height:0px;
-          position:absolute;
-          top:0%;
-          left:22px;
-          content:'';
-          transform:translate(0%, -100%);
-          border-left:7px solid transparent;
-          border-right:7px solid transparent;
-          border-bottom:7px solid #303030;
-        }
+    .menu ul {
+      width: 100%;
+      position: absolute;
+      top: 120%;
+      left: 0px;
+      padding: 10px 18px;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+      border-radius: 3px;
+      background: #303030;
+    }
 
-        .menu li {
-          margin:5px 0px 5px 0px;
-          float:none;
-          display:block;
-        }
+    .menu ul:after {
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      top: 0%;
+      left: 22px;
+      content: '';
+      transform: translate(0%, -100%);
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #303030;
+    }
 
-        .menu a {
-          display:block;
-        }
+    .menu li {
+      margin: 5px 0px 5px 0px;
+      float: none;
+      display: block;
+    }
 
-        .toggle-nav {
-          padding:20px;
-          float:left;
-          display:inline-block;
-          box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-          border-radius:3px;
-          background:#303030;
-          text-shadow:0px 1px 0px rgba(0,0,0,0.5);
-          color:#777;
-          font-size:20px;
-          transition:color linear 0.15s;
-        }
+    .menu a {
+      display: block;
+    }
 
-        .toggle-nav:hover, .toggle-nav.active {
-          text-decoration:none;
-          color:#66a992;
-        }
+    .toggle-nav {
+      padding: 20px;
+      float: left;
+      display: inline-block;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+      border-radius: 3px;
+      background: #303030;
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+      color: #777;
+      font-size: 20px;
+      transition: color linear 0.15s;
+    }
 
-        .search-form {
-          margin:12px 0px 0px 20px;
-          float:left;
-        }
+    .toggle-nav:hover,
+    .toggle-nav.active {
+      text-decoration: none;
+      color: #66a992;
+    }
 
-        .search-form input {
-          box-shadow:-1px 1px 2px rgba(0,0,0,0.1);
-        }
+    .search-form {
+      margin: 12px 0px 0px 20px;
+      float: left;
+    }
 
-}
+    .search-form input {
+      box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    }
   </style>
 </head>
 
@@ -184,7 +186,7 @@
           @foreach (var item in mainTable.ToppProducent)
           {
             <tr>
-              <option value="@item.Belopp" id="TopProducerOptionId">@item.Namn</option>
+              <option value="@item.Belopp" id="@item.ID">@item.Namn</option>
             </tr>
           }
 
@@ -197,7 +199,8 @@
           @foreach (var item in mainTable.Nivå1)
           {
             <tr>
-              <option value="@item.Belopp" id="Nivå1OptionId" class="@item.Nivå_1">@item.Namn</option>
+              <option value="@item.Belopp" id="Nivå1OptionId" relatedToppid="@item.topp_id" class="@item.Nivå_1">
+                @item.Namn</option>
             </tr>
           }
         </select>
@@ -208,7 +211,8 @@
           @foreach (var item in mainTable.Nivå2)
           {
             <tr>
-              <option value="@item.Belopp" id="Nivå2OptionId" class="@item.Nivå_2">@item.Namn</option>
+              <option value="@item.Belopp" id="Nivå2OptionId" relatedNivå1id="@item.nivå_1_id" class="@item.Nivå_2">
+                @item.Namn</option>
             </tr>
           }
         </select>
@@ -227,18 +231,19 @@
     </canvas>
     <div>
 
- <nav class="menu">
-      <ul class="active">
-        <li class="current-item"><a href="/home/omoss">Om oss</a></li>
-        <li><a href="/home/kalla">Källor</a></li>
-        <li><a href="/home/definitioner">Definitioner Me</a></li>
-        <li><a href="/home/bestallatjanster">Beställ tjänster</a></li>
-      </ul>
+      <nav class="menu">
+        <ul class="active">
+          <li class="current-item"><a href="/home/omoss">Om oss</a></li>
+          <li><a href="/home/kalla">Källor</a></li>
+          <li><a href="/home/definitioner">Definitioner Me</a></li>
+          <li><a href="/home/bestallatjanster">Beställ tjänster</a></li>
+        </ul>
 
-      <a class="toggle-nav" href="#">&#9776;</a>
-    </nav>
+        <a class="toggle-nav" href="#">&#9776;</a>
+      </nav>
       <h1>Välfärdsstatistik</h1>
-      <p contenteditable="true">Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa aktörer har skilda
+      <p contenteditable="true">Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa
+        aktörer har skilda
         verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
         Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
         en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
@@ -274,9 +279,9 @@
           "blue",
           "red",
           "orange",
-      
+
           "green",
-       
+
           "CornflowerBlue",
           "Cornsilk",
           "Crimson",
@@ -437,8 +442,8 @@
 
   // Filter based on selected value in Topproducers
 
-  document.getElementById("TopProducerSelectList").addEventListener("change", selectedValueChange);
-  document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChange);
+  document.getElementById("TopProducerSelectList").addEventListener("change", selectedValueChangeTop);
+  document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChangeNiva1);
   document.getElementById("Nivå2SelectList").addEventListener("change", selectedValueChange);
 
   document.getElementById("AddBtnTopp").addEventListener("click", AddValueTopp);
@@ -447,12 +452,60 @@
   document.getElementById("ClearBtn").addEventListener("click", ClearValue);
 
   // On Change
-  function selectedValueChange() {
-  @* alert("Att fixa: Logik för när värden ändras i nivå 1 & 2") *@
+  function selectedValueChangeTop() {
 
 
-      myDoughnutChart.update()
+    // If related nivå1 contains selectedTopID show else hide
+
+    var selectedTopID = $('#TopProducerSelectList').find(":selected").attr('id');
+
+
+    $("#Nivå1SelectList > option").each(function () {
+
+
+      if ($(this).attr('relatedToppid') == selectedTopID) {
+
+      
+
+        $(this).show();
+
+      }
+      else {
+        $(this).hide();
+      }
+
+    });
+
+    myDoughnutChart.update()
   }
+  // On Change
+  function selectedValueChangeNiva1() {
+   // If related nivå1 contains selectedTopID show else hide
+
+    var selectedTopID = $('#TopProducerSelectList').find(":selected").attr('id');
+
+
+    $("#Nivå2SelectList > option").each(function () {
+
+
+      if ($(this).attr('relatedNivå1id') == selectedTopID) {
+
+      
+
+        $(this).show();
+
+      }
+      else {
+        $(this).hide();
+      }
+
+    });
+
+
+
+    myDoughnutChart.update()
+  }
+
 
   // On Add
 
@@ -506,14 +559,14 @@
   }
 
 
-jQuery(document).ready(function() {
-        jQuery('.toggle-nav').click(function(e) {
-          jQuery(this).toggleClass('active');
-          jQuery('.menu ul').toggleClass('active');
+  jQuery(document).ready(function () {
+    jQuery('.toggle-nav').click(function (e) {
+      jQuery(this).toggleClass('active');
+      jQuery('.menu ul').toggleClass('active');
 
-          e.preventDefault();
-        });
-      });
+      e.preventDefault();
+    });
+  });
 
 
 </script>
