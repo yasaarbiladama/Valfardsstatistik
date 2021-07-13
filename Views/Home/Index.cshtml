@@ -199,7 +199,7 @@
           @foreach (var item in mainTable.Nivå1)
           {
             <tr>
-              <option value="@item.Belopp" id="Nivå1OptionId" relatedToppid="@item.topp_id" class="@item.Nivå_1">
+              <option value="@item.Belopp" id="@item.ID" relatedToppid="@item.topp_id" class="@item.Nivå_1">
                 @item.Namn</option>
             </tr>
           }
@@ -211,7 +211,7 @@
           @foreach (var item in mainTable.Nivå2)
           {
             <tr>
-              <option value="@item.Belopp" id="Nivå2OptionId" relatedNivå1id="@item.nivå_1_id" class="@item.Nivå_2">
+              <option value="@item.Belopp" id="@item.ID" relatedNivå1id="@item.nivå_2_id" class="@item.Nivå_2">
                 @item.Namn</option>
             </tr>
           }
@@ -465,7 +465,6 @@
 
       if ($(this).attr('relatedToppid') == selectedTopID) {
 
-      
 
         $(this).show();
 
@@ -480,17 +479,18 @@
   }
   // On Change
   function selectedValueChangeNiva1() {
-   // If related nivå1 contains selectedTopID show else hide
+    // If related nivå1 contains selectedTopID show else hide
 
-    var selectedTopID = $('#TopProducerSelectList').find(":selected").attr('id');
+    var selectedNivå1ID = $('#Nivå1SelectList').find(":selected").attr('id');
 
 
     $("#Nivå2SelectList > option").each(function () {
 
+   
 
-      if ($(this).attr('relatedNivå1id') == selectedTopID) {
+      if ($(this).attr('relatedNivå1id') == selectedNivå1ID) {
 
-      
+
 
         $(this).show();
 
