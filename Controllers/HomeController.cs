@@ -92,12 +92,12 @@ namespace Valfardsstatistik.Controllers
 
         }
 
-
-        public IActionResult OmOss()
+ 
+        public IActionResult Bakgrund()
         {
             return View();
         }
-        public IActionResult Kalla()
+        public IActionResult Verktyget()
         {
             return View();
         }
@@ -105,7 +105,11 @@ namespace Valfardsstatistik.Controllers
         {
             return View();
         }
-        public IActionResult BestallaTjanster()
+        public IActionResult Tjanster()
+        {
+            return View();
+        }
+        public IActionResult Press()
         {
             return View();
         }
