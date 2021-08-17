@@ -199,7 +199,7 @@
           @foreach (var item in mainTable.Nivå1)
           {
             <tr>
-              <option value="@item.Belopp" id="@item.ID" relatedToppid="@item.topp_id" class="@item.Nivå_1">
+              <option value="@item.Belopp" id="@item.ID" relatedToppid="@item.Kontogr_id" class="@item.Nivå_1">
                 @item.Namn</option>
             </tr>
           }
@@ -211,7 +211,7 @@
           @foreach (var item in mainTable.Nivå2)
           {
             <tr>
-              <option value="@item.Belopp" id="@item.ID" relatedNivå1id="@item.nivå_2_id" class="@item.Nivå_2">
+              <option value="@item.Belopp" id="@item.ID" relatedNivå1id="@item.Underkonto_id" class="@item.Nivå_2">
                 @item.Namn</option>
             </tr>
           }
@@ -257,6 +257,15 @@
 </body>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
+@* var el = document.getElementsByTagName("*");
+
+const a = ["a", "b", "c"];
+for (let index = 0; index < el.length; ++index) {
+    console.log(el[index]);
+
+    el[index].setAttribute("contenteditable","true");
+} *@
+
 
   var doughnutLabelNameArray = '';
   var doughnutValueArray = '';

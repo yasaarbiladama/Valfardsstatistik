@@ -8,10 +8,9 @@ namespace Valfardsstatistik.Models
         public string Topp { get; set; }
         public string Nivå_1 { get; set; }
         public string Nivå_2 { get; set; }
-
-                public string topp_id { get; set; }
-        public string nivå_1_id { get; set; }
-        public string nivå_2_id { get; set; }
+     public string Kontogr_id { get; set; }
+        public string Huvudkonto_id { get; set; }
+        public string Underkonto_id { get; set; }
 
 
     }

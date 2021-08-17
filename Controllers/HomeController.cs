@@ -79,11 +79,10 @@ namespace Valfardsstatistik.Controllers
             var mssqlConnectionString = "Server=tcp:valfardsstatistik.database.windows.net,1433;Initial Catalog=valfardsstatistikdb;Persist Security Info=False;User ID=minnadb;Password=Beachsteps@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
             using var connection = new SqlConnection(mssqlConnectionString);
 
-            var ToppProducenter = connection.Query<ToppProducent>("SELECT * FROM Huvudtabellen where Topp = 1").ToList();
-            var Nivå1 = connection.Query<Nivå1>("SELECT * FROM Huvudtabellen where Nivå_1 = 1").ToList();
-            var Nivå2 = connection.Query<Nivå2>("SELECT * FROM Huvudtabellen where Nivå_2 = 1").ToList();
+            var ToppProducenter = connection.Query<ToppProducent>("SELECT * FROM Huvudtabellen where Kontogrupp = 1").ToList();
+            var Nivå1 = connection.Query<Nivå1>("SELECT * FROM Huvudtabellen where Huvudkonto = 1").ToList();
+            var Nivå2 = connection.Query<Nivå2>("SELECT * FROM Huvudtabellen where Underkonto = 1").ToList();
 
-        
 
             var MainTable = new MainTable { ToppProducent = ToppProducenter, Nivå1 = Nivå1, Nivå2 = Nivå2 };
 
