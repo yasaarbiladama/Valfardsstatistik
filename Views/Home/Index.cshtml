@@ -453,7 +453,7 @@ for (let index = 0; index < el.length; ++index) {
 
   document.getElementById("TopProducerSelectList").addEventListener("change", selectedValueChangeTop);
   document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChangeNiva1);
-  @* document.getElementById("Nivå2SelectList").addEventListener("change", selectedValueChange); *@
+  @* document.getElementById.addEventListener("change", selectedValueChange); *@
 
   document.getElementById("AddBtnTopp").addEventListener("click", AddValueTopp);
   document.getElementById("AddBtnNivå1").addEventListener("click", AddValueNivå1);
@@ -547,7 +547,11 @@ for (let index = 0; index < el.length; ++index) {
 
       myDoughnutChart.data.labels.push($('#Nivå2SelectList').find(":selected").text())
       myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))
-
+      
+      // Reset selctlists
+      document.getElementById("TopProducerSelectList").selectedIndex = 0;
+      document.getElementById("Nivå1SelectList").selectedIndex = 0;
+      document.getElementById("Nivå2SelectList").selectedIndex = 0;
 
     }
 
