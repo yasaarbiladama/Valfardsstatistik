@@ -176,7 +176,29 @@
   <div class="flex-container">
     <div>
 
+<div><h1>Gör såhär:</h1>
+      <p style="width:600px;">
+       <p></p> 
 
+       <ul>
+  <li>Välj Kontogrupp.
+Klicka på ”Lägg till” om du vill jämföra just den med andra.</li>
+  <li>Annars går du vidare till nästa rad Huvudgrupp 
+Klicka på ”Lägg till” om du vill jämföra just den med andra.</li>
+  <li>Eller så går du vidare till rad 3, undergrupp
+Gör ditt val.</li>
+</ul>  
+ 
+
+ 
+
+ 
+
+ 
+Därefter väljer du nästa utgift/omsättning att jämföra. Osv.
+
+
+      </p></div>
       <div class="form-group">
 
         @* <label for="TopProducer"><b> Topp producent</b></label> *@
@@ -231,23 +253,40 @@
     </canvas>
     <div>
 
-      <nav class="menu">
+      @* <nav class="menu">
         <ul class="active">
-          <li class="current-item"><a href="/home/omoss">Om oss</a></li>
-          <li><a href="/home/kalla">Källor</a></li>
-          <li><a href="/home/definitioner">Definitioner Me</a></li>
-          <li><a href="/home/bestallatjanster">Beställ tjänster</a></li>
+        <li class="current-item"><a href="/home/omoss">Om oss</a></li>
+        <li><a href="/home/kalla">Källor</a></li>
+        <li><a href="/home/definitioner">Definitioner Me</a></li>
+        <li><a href="/home/bestallatjanster">Beställ tjänster</a></li>
         </ul>
 
         <a class="toggle-nav" href="#">&#9776;</a>
-      </nav>
-      <h1>Offentlig ekonomi</h1>
-      <p>Sveriges välfärdstjänster är fördelade mellan staten, kommunerna och regionerna. Dessa
-        aktörer har skilda
-        verksamhetsområden och redovisningssystem. Exempel på välfärdstjänster är äldreomsorg och sjukvård.
-        Välfärd statistik sammanställer samtliga offentliga utgifter på en och samma plattform med syfte att ge
-        en sammanhängande och förståelig helhetsbild av Sveriges offentliga utgifter. </p>
+        </nav> *@
+      
     </div>
+    
+    <div class="contaimer" style="display:flex:">
+<div><h1>Offentlig ekonomi</h1>
+      <p style="width:600px;">Det borde vara en självklarhet att kunna se en överskådlig bild över vad vi får för skatter och avgifter, men,
+        så är det inte.
+        Det offentliga systemet är svårt att få grepp om.
+        Stat, kommun och Regioner har helt egna ekonomier och nyckeltal som inte samkörs med varandra, förrän nu. Här
+        kan du jämföra utgift mellan ex polismyndighet, sjukpenning, Högskolan Karlstad, Inspektionen för vård och
+        omsorg med omsättning alkoholinköp, fritidsartiklar, kungahuset eller Elon Musks förmögenhet, eller hur hög
+        momsen är i förhållande till ex. Äldreomsorgens utgifter!
+
+        Du kan jämföra upp till 10 olika utgifter/omsättningar med varandra.
+        Den första raden visar ”Kontogrupp”, den andra ”Huvudgrupp” och den tredje ”Underkonto”
+        För varje gång du klickar på ”lägg till” så gör du ett val som syns i cirkeltabellen
+
+      </p></div>
+<div>
+ <iframe name="f104012dd2f4b" height="320px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.10/plugins/page.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df19caa3fca5cd4%26domain%3Dwww.goddag.nu%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.goddag.nu%252Ff271d0bcdc2e0d8%26relation%3Dparent.parent&amp;container_width=303&amp;height=320&amp;hide_cover=false&amp;hide_cta=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FGodDag.nu%2F&amp;locale=sv_SE&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline&amp;width=500px" style="border: none; visibility: visible; width: 303px; height: 320px;" class=""></iframe>
+      </div>
+
+    </div>
+    
 
   </div>
 
@@ -257,14 +296,14 @@
 </body>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
-@* var el = document.getElementsByTagName("*");
+  @* var el = document.getElementsByTagName("*");
 
-const a = ["a", "b", "c"];
-for (let index = 0; index < el.length; ++index) {
+    const a = ["a", "b", "c"];
+    for (let index = 0; index < el.length; ++index) {
     console.log(el[index]);
 
     el[index].setAttribute("contenteditable","true");
-} *@
+    } *@
 
 
   var doughnutLabelNameArray = '';
@@ -455,7 +494,7 @@ for (let index = 0; index < el.length; ++index) {
   document.getElementById("Nivå1SelectList").addEventListener("change", selectedValueChangeNiva1);
   @* document.getElementById.addEventListener("change", selectedValueChange); *@
 
-  document.getElementById("AddBtnTopp").addEventListener("click", AddValueTopp);
+    document.getElementById("AddBtnTopp").addEventListener("click", AddValueTopp);
   document.getElementById("AddBtnNivå1").addEventListener("click", AddValueNivå1);
   document.getElementById("AddBtnNivå2").addEventListener("click", AddValueNivå2);
   document.getElementById("ClearBtn").addEventListener("click", ClearValue);
@@ -495,7 +534,7 @@ for (let index = 0; index < el.length; ++index) {
 
     $("#Nivå2SelectList > option").each(function () {
 
-   
+
 
       if ($(this).attr('relatedNivå1id') == selectedNivå1ID) {
 
@@ -523,7 +562,7 @@ for (let index = 0; index < el.length; ++index) {
     if ($('#TopProducerSelectList').find(":selected").attr('value') !== "") {
 
       myDoughnutChart.data.labels.push($('#TopProducerSelectList').find(":selected").text())
-      myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value')))
+      myDoughnutChart.data.datasets[0].data.push(parseInt($('#TopProducerSelectList').find(":selected").attr('value') + 'Test'))
 
     }
 
@@ -547,7 +586,7 @@ for (let index = 0; index < el.length; ++index) {
 
       myDoughnutChart.data.labels.push($('#Nivå2SelectList').find(":selected").text())
       myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå2SelectList').find(":selected").attr('value')))
-      
+
       // Reset selctlists
       document.getElementById("TopProducerSelectList").selectedIndex = 0;
       document.getElementById("Nivå1SelectList").selectedIndex = 0;

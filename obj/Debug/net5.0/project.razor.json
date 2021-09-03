@@ -15624,6 +15624,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/Internationella.cshtml",
+      "TargetPath": "Views\\Home\\Internationella.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
