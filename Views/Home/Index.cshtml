@@ -13,7 +13,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
   <title>Offentlig ekonomi</title>
-  <img width="200px; height" height="200px" src="https://i.postimg.cc/HkK5PhTG/logooffekonomi.png"><img>
+  
 
 
   <style>
@@ -238,8 +238,8 @@ Därefter väljer du nästa utgift/omsättning att jämföra. Osv.
             </tr>
           }
         </select>
-        <button type="button" id="AddBtnNivå2" class="btn btn-success">Lägg till Underkonto</button>
-        <button type="button" id="ClearBtn" class="btn btn-warning">Rensa</button>
+        <button type="button" id="AddBtnNivå2" class="btn btn-success">Lägg till Underkonto</button><br>
+        <button type="button" id="ClearBtn" class="btn btn-warning">Rensa allt</button>
 
       </div>
     </div>
@@ -267,18 +267,24 @@ Därefter väljer du nästa utgift/omsättning att jämföra. Osv.
     </div>
     
     <div class="contaimer" style="display:flex:">
-<div><h1>Offentlig ekonomi</h1>
-      <p style="width:600px;">Det borde vara en självklarhet att kunna se en överskådlig bild över vad vi får för skatter och avgifter, men,
-        så är det inte.
-        Det offentliga systemet är svårt att få grepp om.
-        Stat, kommun och Regioner har helt egna ekonomier och nyckeltal som inte samkörs med varandra, förrän nu. Här
-        kan du jämföra utgift mellan ex polismyndighet, sjukpenning, Högskolan Karlstad, Inspektionen för vård och
-        omsorg med omsättning alkoholinköp, fritidsartiklar, kungahuset eller Elon Musks förmögenhet, eller hur hög
-        momsen är i förhållande till ex. Äldreomsorgens utgifter!
+<div><h1>Om</h1>
+      <p style="width:600px;">
+        Det borde vara en självklarhet att det finns en överskådlig bild över svensk offentlig ekonomi. men, så är det inte. 
+Stat, kommun och Regioner har var för sig sina egna ekonomier och nyckeltal som inte samkörs med varandra, förrän nu!
+Med Jämförelseverktyget kan du jämföra omsättning kors och tvärs mellan olika Kontogrupper och underkonton. ex
+<ul> 
+  <li>
+Polismyndighet med sjukpenning, </li>
+  <li>
+Högskolan Karlstad med Inspektionen för vård och omsorg eller omsättning alkoholinköp, fritidsartiklar, kungahuset </li>
+  <li>
+Elon Musks förmögenhet, eller hur hög momsen är i förhållande till ex. Äldreomsorgens utgifter! </li>
 
-        Du kan jämföra upp till 10 olika utgifter/omsättningar med varandra.
-        Den första raden visar ”Kontogrupp”, den andra ”Huvudgrupp” och den tredje ”Underkonto”
-        För varje gång du klickar på ”lägg till” så gör du ett val som syns i cirkeltabellen
+
+
+
+</ul>
+
 
       </p></div>
 <div>
@@ -566,6 +572,11 @@ Därefter väljer du nästa utgift/omsättning att jämföra. Osv.
 
     }
 
+          // Reset selctlists
+      document.getElementById("TopProducerSelectList").selectedIndex = 0;
+      document.getElementById("Nivå1SelectList").selectedIndex = 0;
+      document.getElementById("Nivå2SelectList").selectedIndex = 0;
+
     myDoughnutChart.update()
   }
 
@@ -577,6 +588,10 @@ Därefter väljer du nästa utgift/omsättning att jämföra. Osv.
       myDoughnutChart.data.datasets[0].data.push(parseInt($('#Nivå1SelectList').find(":selected").attr('value')))
     }
 
+      // Reset selctlists
+      document.getElementById("TopProducerSelectList").selectedIndex = 0;
+      document.getElementById("Nivå1SelectList").selectedIndex = 0;
+      document.getElementById("Nivå2SelectList").selectedIndex = 0;
     myDoughnutChart.update()
   }
 

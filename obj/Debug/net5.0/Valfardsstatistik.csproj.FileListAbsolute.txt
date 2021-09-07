@@ -32,8 +32,9 @@
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Valfardsstatistik.TagHelpers.output.cache
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Valfardsstatistik.RazorCoreGenerate.cache
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/bakgrund.cshtml.g.cs
-/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Definitioner.cshtml.g.cs
+/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/definitioner.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Internationella.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Press.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/tjanster.cshtml.g.cs
@@ -51,4 +52,3 @@
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/ref/Valfardsstatistik.dll
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Valfardsstatistik.pdb
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Valfardsstatistik.genruntimeconfig.cache
-/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Debug/net5.0/Razor/Views/Home/Internationella.cshtml.g.cs

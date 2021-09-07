@@ -51,3 +51,4 @@
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Release/net5.0/Razor/Views/Home/Press.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Release/net5.0/Razor/Views/Home/tjanster.cshtml.g.cs
 /Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Release/net5.0/Razor/Views/Home/verktyget.cshtml.g.cs
+/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/obj/Release/net5.0/Razor/Views/Home/Internationella.cshtml.g.cs
