@@ -15679,8 +15679,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/Definitioner.cshtml",
-      "TargetPath": "Views\\Home\\Definitioner.cshtml",
+      "FilePath": "/Users/yasaarbiladama/Documents/Development/CLIENTS/ValfardsstatistikApp/Valfardsstatistik/Views/Home/definitioner.cshtml",
+      "TargetPath": "Views\\Home\\definitioner.cshtml",
       "FileKind": "mvc"
     }
   ],
