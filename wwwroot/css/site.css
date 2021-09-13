@@ -89,3 +89,12 @@ body {
     width: 600px !important;
     }
   }
+
+.nav-link.text-dark{
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar-nav.flex-grow-1{
+
+  font-size: 120%;
+}
