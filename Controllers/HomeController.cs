@@ -76,7 +76,8 @@ namespace Valfardsstatistik.Controllers
         public MainTable GetSqlData()
         {
 
-            var mssqlConnectionString = "Server=tcp:valfardsstatistik.database.windows.net,1433;Initial Catalog=valfardsstatistikdb;Persist Security Info=False;User ID=minnadb;Password=Beachsteps@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+            // var mssqlConnectionString = "Server=tcp:valfardsstatistik.database.windows.net,1433;Initial Catalog=valfardsstatistikdb;Persist Security Info=False;User ID=minnadb;Password=Beachsteps@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;";
+            var mssqlConnectionString = "Data Source=mssql100.windows.loopia.com;Initial Catalog=e002585;Persist Security Info=True;User ID=e002585a;Password=Beachsteps@123";
             using var connection = new SqlConnection(mssqlConnectionString);
 
             var ToppProducenter = connection.Query<ToppProducent>("SELECT * FROM Huvudtabellen where Kontogrupp = 1 order by Namn").ToList();
